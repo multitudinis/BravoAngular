@@ -1,0 +1,96 @@
+<div class="tela-legenda">
+<i-feather name="folder"></i-feather>
+  <div>
+    <h2>Obra</h2>
+    <h4>Tela de cadastro</h4>
+  </div>
+</div>
+<mat-stepper orientation="vertical" [linear]="true" #stepper>
+  <mat-step [stepControl]="obraFormGroup" label="Preencha os dados da obra" labelPosition="bottom">
+    <form [formGroup]="obraFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>Descricao</mat-label>
+        <input matInput placeholder="Breve descricao da obra" formControlName="descricao" required>
+      </mat-form-field>
+      <fieldset>
+        <legend>Endereço</legend>
+        <mat-form-field appearance="outline">
+          <mat-label>Cep</mat-label>
+          <input matInput placeholder="Cep" formControlName="cep" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Logradouro</mat-label>
+          <input matInput placeholder="Logradouro" formControlName="logradouro" required>
+        </mat-form-field><mat-form-field appearance="outline">
+          <mat-label>Número</mat-label>
+          <input matInput placeholder="Número" formControlName="numero" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Bairro</mat-label>
+          <input matInput placeholder="Bairro" formControlName="bairro" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Complemento</mat-label>
+          <input matInput placeholder="complemento" formControlName="complemento" required>
+        </mat-form-field>
+      </fieldset>
+      <div>
+        <button mat-button matStepperNext>Proximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="cidadeFormGroup">
+    <form [formGroup]="cidadeFormGroup">
+      <ng-template matStepLabel>Informações sobre cidade e estado</ng-template>
+         <ng-select style="min-width: 190px;" placeholder="Digite o nome da cidade" [items]="optionsCidade"
+         formControlName="cidadeId" bindLabel="value" bindValue="id" #inputSearch notFoundText="Nenhuma sugestão"
+         [loading]="isSearching" [searchable]="true" loadingText="A carregar...">
+        </ng-select>
+      <br/>
+         <ng-select style="min-width: 190px;" placeholder="Digite o nome do estado" [items]="optionsEstado"
+         formControlName="estadoId" bindLabel="value" bindValue="id" #inputSearch notFoundText="Nenhuma sugestão"
+         [loading]="isSearching" [searchable]="true" loadingText="A carregar...">
+        </ng-select>
+        <br />
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Proximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="clienteFormGroup">
+    <form [formGroup]="clienteFormGroup">
+      <ng-template matStepLabel>Informacoes sobre o cliente</ng-template>
+        <ng-select style="min-width: 190px;" placeholder="Digite o nome do cliente" [items]="optionsCliente"
+          formControlName="clienteId" bindLabel="value" bindValue="id" #inputSearch notFoundText="Nenhuma sugestão"
+          [loading]="isSearching" [searchable]="true" loadingText="A carregar...">
+        </ng-select>
+        <br />
+        <br />
+        <br />
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Proximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="funcionarioFormGroup">
+    <form [formGroup]="funcionarioFormGroup" (submit)="salvar()">
+      <ng-template matStepLabel>Colaboradores vinculados a obra</ng-template>
+        <ng-select style="min-width: 190px;" placeholder="Digite o nome do funcionário" [items]="optionsFuncionario"
+          formControlName="funcionariosId" [multiple]="true" bindLabel="value" bindValue="id" #inputSearch notFoundText="Nenhuma sugestão"
+          [loading]="isSearching" [searchable]="true" loadingText="A carregar...">
+        </ng-select>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button type="submit" mat-button>Finalizar</button>
+      </div>
+    </form>
+  </mat-step>
+      <!--button mat-button (click)="stepper.reset()">Reset</button -->
+</mat-stepper>

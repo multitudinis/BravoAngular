@@ -1,0 +1,133 @@
+<mat-nav-list class="text-yellow-300">
+  <ul class="space-y-2 font-medium">
+    <li>
+        <button type="button" class="btn-menu hover:bg-gray-100" aria-controls="tarefas" data-collapse-toggle="tarefas">
+                <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900"
+                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap">Tarefas</span>
+                <mat-icon>expand_more</mat-icon>
+        </button>
+        <ul id="tarefas" class="hidden py-2 space-y-2">
+            <li>
+                <a routerLink="/tarefa/cadastrar" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Cadastro</a>
+            </li>
+            <li>
+                <a routerLink="/tarefa/listar" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Listar</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <button type="button" class="btn-menu hover:bg-gray-100" aria-controls="obra" data-collapse-toggle="obra">
+                <svg aria-hidden="true"
+                    class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900"
+                    fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <span class="flex-1 ml-3 text-left whitespace-nowrap">Obras</span>
+                <mat-icon>expand_more</mat-icon>
+        </button>
+        <ul id="obra" class="hidden py-2 space-y-2">
+                <li>
+                    <a routerLink="/obra/cadastro" (click)="onSidenavClose()"
+                        class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Cadastro</a>
+                </li>
+                <li>
+                    <a routerLink="/obra/listar" (click)="onSidenavClose()"
+                        class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Listar</a>
+                </li>
+        </ul>
+    </li>
+    <li>
+        <button type="button" class="btn-menu hover:bg-gray-100" aria-controls="usuario" data-collapse-toggle="usuario">
+            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900" fill="currentColor"
+                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">Usuários</span>
+            <mat-icon>expand_more</mat-icon>
+        </button>
+        <ul id="usuario" class="hidden py-2 space-y-2">
+            <li>
+                <a routerLink="/usuario/cadastro" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Cadastro</a>
+            </li>
+            <li>
+                <a routerLink="/usuario/listar" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Alterar senha</a>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <button type="button" class="btn-menu hover:bg-gray-100" aria-controls="cliente" data-collapse-toggle="cliente">
+            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">Cliente</span>
+            <mat-icon>expand_more</mat-icon>
+        </button>
+        <ul id="cliente" class="hidden py-2 space-y-2">
+            <li>
+                <a routerLink="/cliente/cadastro" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Cadastro</a>
+            </li>
+            <li>
+                <a routerLink="/cliente/listar" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Listar</a>
+            </li>
+        </ul>
+    </li>
+
+
+    <li>
+        <button type="button" class="btn-menu hover:bg-gray-100" aria-controls="cliente" data-collapse-toggle="funcionario">
+            <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="flex-1 ml-3 text-left whitespace-nowrap">Funcionário</span>
+            <mat-icon>expand_more</mat-icon>
+        </button>
+        <ul id="funcionario" class="hidden py-2 space-y-2">
+            <li>
+                <a routerLink="/funcionario/cadastro" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Cadastro</a>
+            </li>
+            <li>
+                <a routerLink="/funcionario/listar" (click)="onSidenavClose()"
+                    class="flex items-center w-full p-2 text-gray-900 pl-11 group hover:bg-gray-100">Listar</a>
+            </li>
+        </ul>
+    </li>
+
+
+    <li>
+        <a href="#"
+            class="flex items-center p-2 text-gray-900 hover:bg-gray-100">
+            <svg aria-hidden="true"
+                class="flex-shrink-0 w-6 h-6 text-gray-500 group-hover:text-gray-900"
+                fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                    clip-rule="evenodd"></path>
+            </svg>
+            <span class="flex-1 ml-3 whitespace-nowrap">Login</span>
+        </a>
+    </li>
+  
+  </ul>
+</mat-nav-list>

@@ -1,0 +1,4 @@
+[
+{"_id": "1", "name": "Chapisco", "category": "estruturante", "coordenador": "strassera", "descricaoSintetica": "", "descricaoAnalitica": "", "descricaoTermino": "", "caminhoDocumento": "", "executor": "", "delegador": "", "recorrencia": "", "prioridade": "", "etapa": "", "visibilidade": "", "agenteFinal": "", "duracao": "", "dataInicio": null, "envolverCliente": "", "interdependencias": ""},
+{"_id": "2", "name": "Medição", "category": "planejamento", "coordenador": "angel",  "descricaoSintetica": "", "descricaoAnalitica": "", "descricaoTermino": "", "caminhoDocumento": "", "executor": "", "delegador": "", "recorrencia": "", "prioridade": "", "etapa": "", "visibilidade": "", "agenteFinal": "", "duracao": "", "dataInicio": null, "envolverCliente": "", "interdependencias": ""}
+]

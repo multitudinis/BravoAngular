@@ -1,0 +1,25 @@
+.mat-list-base .mat-list-item {
+    color: #F5CA00;
+}
+a:hover, a:active{
+    color: lightgray;
+}
+.nav-caption{
+    display: inline-block;
+    padding-left: 6px;
+}
+.side-menu{
+    display: flex;
+    flex-direction: column;
+    margin-left: -10px;
+}
+
+.btn-menu{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    border-radius: 0.5rem;
+}

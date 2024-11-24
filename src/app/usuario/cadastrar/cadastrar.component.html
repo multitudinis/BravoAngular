@@ -1,0 +1,21 @@
+<form [formGroup]="usuarioFormGroup" class="flex flex-col"  (ngSubmit)="salvar()">
+  <div>
+    <h3>Cadastro de usuario</h3>
+  </div>
+    <p-toast position="top-center" key="bc"></p-toast>
+  <mat-form-field appearance="outline">
+    <mat-label>Nome</mat-label>
+    <input matInput placeholder="Breve descricao da tarefa" formControlName="nome" required>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Descricao completa da tarefa" formControlName="email" required>
+  </mat-form-field> 
+  <mat-form-field appearance="outline">
+    <mat-label>Senha</mat-label>
+    <input matInput placeholder="Descricao completa da tarefa" formControlName="senha" required>
+  </mat-form-field>
+  <div>
+    <button mat-raised-button color="primary">Cadastrar</button>
+  </div>
+</form>

@@ -1,0 +1,11 @@
+.tela-legenda{
+  display: flex;
+  mat-icon{
+    font-size: x-large;
+  }
+  div{
+    display: flex;
+    flex-direction: column;
+  }
+ 
+}

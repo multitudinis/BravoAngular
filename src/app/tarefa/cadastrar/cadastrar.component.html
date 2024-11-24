@@ -1,0 +1,98 @@
+<mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+  <mat-step [stepControl]="tarefaFormGroup" label="Preencha os dados da tarefa" labelPosition="bottom">
+    <form [formGroup]="tarefaFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>Descricao Sintetica</mat-label>
+        <input matInput placeholder="Breve descricao da tarefa" formControlName="descricaoSintetica" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Descricao Analitica</mat-label>
+        <input matInput placeholder="Descricao completa da tarefa" formControlName="descricaoAnalitica" required>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Recorrencia</mat-label>
+        <mat-select formControlName="recorrencia" required>
+          <mat-option value="diaria">Diaria</mat-option>
+          <mat-option value="semanal">Semanal</mat-option>
+          <mat-option value="mensal">Mensal</mat-option>
+          <mat-option value="anual">Anual</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Data de inicio</mat-label>
+        <input matInput formControlName="dataInicio" [matDatepicker]="dataInicioPicker" required>
+        <mat-datepicker-toggle matSuffix [for]="dataInicioPicker"></mat-datepicker-toggle>
+        <mat-datepicker #dataInicioPicker [touchUi]="true"></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Data fim</mat-label>
+        <input matInput formControlName="dataTermino" [matDatepicker]="dataTerminoPicker" required>
+        <mat-datepicker-toggle matSuffix [for]="dataTerminoPicker">
+        </mat-datepicker-toggle>
+        <mat-datepicker #dataTerminoPicker [touchUi]="true">
+        </mat-datepicker>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Proximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="obraFormGroup">
+    <form [formGroup]="obraFormGroup">
+      <ng-template matStepLabel>Informacoes sobre a Obra</ng-template>
+      <mat-form-field appearance="outline">
+        <mat-label>Obra</mat-label>
+        <mat-select formControlName="id" required>
+          <mat-option *ngFor="let option of optionsObra" [value]="option.value">
+            {{option.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Anterior</button>
+        <button mat-button matStepperNext>Proximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="colaboradorFormGroup">
+    <form [formGroup]="colaboradorFormGroup">
+      <ng-template matStepLabel>Colaboradores vinculados a tarefa</ng-template>
+      <mat-form-field appearance="outline">
+        <mat-label>Executor</mat-label>
+        <mat-select formControlName="executor" required>
+          <mat-option *ngFor="let option of optionsColaboradores" [value]="option.value">
+            {{option.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Delegador</mat-label>
+        <mat-select formControlName="delegador" required>
+          <mat-option *ngFor="let option of optionsColaboradores" [value]="option.value">
+            {{option.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Coordenador</mat-label>
+        <mat-select formControlName="coordenador" required>
+          <mat-option *ngFor="let option of optionsColaboradores" [value]="option.value">
+            {{option.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+      <button mat-button matStepperPrevious>Anterior</button>
+      <button mat-button matStepperNext>Proximo</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Anterior</button>
+      <button type="submit" mat-button>Finalizar</button>
+    </div>
+  </mat-step>
+</mat-stepper>
