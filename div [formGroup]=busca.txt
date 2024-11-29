@@ -1,0 +1,26 @@
+	  <div [formGroup]="busca">
+          <input matInput placeholder="Cep" (blur)="buscaCep()" formControlName="cep" required>
+          </div>
+
+		buscaCep(){
+   			const CEP = this.busca.get('cep')?.value;
+  			this.http.get(`viacep.com.br/ws/${ CEP }/json/`).pipe(
+    					catchError(erro => {
+      			if (erro.status === 404) {
+        		console.log('Produto não localizado.');
+      			}
+    			  return throwError(() => new Error(erro));
+  			  })
+  			).subscribe(
+  			  resultado => {
+  			    console.log(resultado);
+  			  }
+  			);
+  			 console.log(CEP)
+  			}
+
+		ngOnInit(): void {
+    			this.busca = this.fb.group({
+      			cep: [0, Validators.required]
+    			});
+  		}
